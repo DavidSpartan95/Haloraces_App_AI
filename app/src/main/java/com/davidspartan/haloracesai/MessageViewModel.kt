@@ -12,7 +12,10 @@ class MsgViewModel(): ViewModel() {
     fun callGPT(message: String, onResult: (String) -> Unit) {
         viewModelScope.launch {
             val request = ChatRequest(
-                messages = listOf(Message("user", message))
+                messages = listOf(
+                    Message("system", "You are a helpful assistant for Haloraces.com. You answer questions about race results, runners, and event history."),
+                    Message("user", message)
+                ),
             )
             val response = openAIService.getChatCompletion(request, "Bearer ${BuildConfig.API_KEY}")
             if (response.isSuccessful) {
