@@ -11,6 +11,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavHostController
+import com.davidspartan.haloracesai.ui.theme.Black13
 
 @Composable
 fun NavBar(navController: NavHostController) {
@@ -19,7 +20,7 @@ fun NavBar(navController: NavHostController) {
     }
 
     NavigationBar(
-        containerColor = Color.White
+        containerColor = Black13
     ) {
         navigationItems.forEachIndexed { index, item ->
             NavigationBarItem(
@@ -35,7 +36,7 @@ fun NavBar(navController: NavHostController) {
                     Text(
                         item.title,
                         color = if (index == selectedNavigationIndex.intValue)
-                            Color.Black
+                            Color.White
                         else Color.Gray
                     )
                 },
