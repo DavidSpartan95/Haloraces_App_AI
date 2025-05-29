@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -24,6 +25,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.davidspartan.haloracesai.ui.theme.Black13
 import com.davidspartan.haloracesai.ui.theme.HaloracesAITheme
 
 class MainActivity : ComponentActivity() {
@@ -33,7 +35,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             HaloracesAITheme {
                 Box(
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = Modifier.fillMaxSize().background(Black13),
                     contentAlignment = Alignment.Center
                 ){
                     GPTChatUI()
